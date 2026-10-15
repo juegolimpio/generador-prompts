@@ -1,6 +1,6 @@
-# Generador de ideas para IA — piloto 0.4
+# Generador de ideas para IA — piloto 0.5
 
-**Estado:** aplicación publicada mediante GitHub Pages; versión 0.4 con mejoras en la guía visual y acceso voluntario a opiniones. Nombre y lema provisionales: «Donde tus ideas toman forma».
+**Estado:** aplicación publicada mediante GitHub Pages; versión 0.5 con mejoras en la guía visual y acceso voluntario a opiniones. Nombre y lema provisionales: «Donde tus ideas toman forma».
 
 ## Objetivo
 
@@ -62,3 +62,7 @@ Conservar los pilotos 0.1 y 0.2 como respaldo; 0.3 modifica principalmente la ex
 https://docs.google.com/forms/d/e/1FAIpQLSf3MonQK1hkRnv7XsqtGNOZFXBH2Px6HfpgR8BYQBTSDqd3mg/viewform
 
 El formulario externo es voluntario: la aplicación no envía contenidos de los prompts a Google Forms.
+
+## Novedad 0.5: Compartir la aplicación
+
+Botón «Compartir» en el encabezado. En navegadores compatibles utiliza la interfaz nativa para compartir; en otros, copia el enlace público. Nunca comparte los textos introducidos ni el prompt generado. Se actualizó la versión de caché para distribuir el cambio a quienes la tienen instalada.

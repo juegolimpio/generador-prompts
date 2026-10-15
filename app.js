@@ -212,6 +212,51 @@
     $('copy-message').textContent = 'Se preparó el archivo de texto para guardar.';
   });
 
+  // Compartir solo el enlace público de la app, nunca el contenido del formulario.
+  const APP_SHARE_URL = 'https://juegolimpio.github.io/generador-prompts/';
+  const shareButton = $('share-app-btn');
+  const shareStatus = $('share-status');
+  let shareNoticeTimer;
+  function showShareNotice(message) {
+    window.clearTimeout(shareNoticeTimer);
+    shareStatus.textContent = message;
+    shareNoticeTimer = window.setTimeout(() => { shareStatus.textContent = ''; }, 5000);
+  }
+  shareButton.addEventListener('click', async () => {
+    // En móviles compatibles aparece la ventana nativa (WhatsApp, correo, etc.).
+    if (typeof navigator.share === 'function') {
+      try {
+        await navigator.share({
+          title: 'Generador de ideas para IA',
+          text: 'Donde tus ideas toman forma. Gratis y sin registro.',
+          url: APP_SHARE_URL
+        });
+        return;
+      } catch (error) {
+        if (error && error.name === 'AbortError') return; // El usuario cerró el menú.
+      }
+    }
+    // Alternativa accesible cuando no hay menú nativo para compartir.
+    try {
+      if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard no disponible');
+      await navigator.clipboard.writeText(APP_SHARE_URL);
+      showShareNotice('¡Enlace copiado! Ya podés compartirlo.');
+    } catch (_) {
+      const input = document.createElement('textarea');
+      input.value = APP_SHARE_URL;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.append(input);
+      input.select();
+      let copied = false;
+      try { copied = document.execCommand('copy'); } catch (_) { /* alternativa manual */ }
+      input.remove();
+      if (copied) showShareNotice('¡Enlace copiado! Ya podés compartirlo.');
+      else window.prompt('Copiá el enlace de la aplicación:', APP_SHARE_URL);
+    }
+  });
+
   // Se muestra la invitación solo si configuramos una URL de Google Forms para responder.
   try {
     const feedbackUrl = new URL(FEEDBACK_FORM_URL);

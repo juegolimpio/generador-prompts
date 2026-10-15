@@ -29,12 +29,17 @@
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
     <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 3M12 17h.01"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></symbol>
   </svg>
 
   <header class="topbar">
     <div class="wrap header-row">
       <a class="wordmark" href="#inicio" aria-label="Volver al inicio"><span class="brand-icon"><svg><use href="#i-spark"/></svg></span><span>Generador de ideas <small>para IA</small></span></a>
-      <a class="top-help" href="#ayuda"><svg><use href="#i-help"/></svg> ¿Cómo se usa?</a>
+      <div class="header-actions">
+        <a class="top-help" href="#ayuda" aria-label="¿Cómo se usa?" title="¿Cómo se usa?"><svg aria-hidden="true"><use href="#i-help"/></svg><span class="top-help-label">¿Cómo se usa?</span></a>
+        <button class="top-share" id="share-app-btn" type="button"><svg aria-hidden="true"><use href="#i-share"/></svg> Compartir</button>
+        <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
+      </div>
     </div>
   </header>
 
@@ -144,7 +149,7 @@
       <a id="feedback-action" class="secondary-button feedback-action" href="#" target="_blank" rel="noopener noreferrer">Dejar mi opinión <svg><use href="#i-arrow"/></svg></a>
     </section>
   </main>
-  <footer class="footer"><div class="wrap footer-row"><span><span class="footer-spark">✦</span> Donde tus ideas toman forma</span><span>Versión de prueba 0.4 · Sin registro · Sin publicidad</span></div></footer>
+  <footer class="footer"><div class="wrap footer-row"><span><span class="footer-spark">✦</span> Donde tus ideas toman forma</span><span>Versión de prueba 0.5 · Sin registro · Sin publicidad</span></div></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>

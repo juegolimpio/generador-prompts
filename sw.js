@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'ideas-app-v04';
+const CACHE = 'ideas-app-v05';
 const ASSETS = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
