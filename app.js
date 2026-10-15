@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
-  const FEEDBACK_FORM_URL = ''; // Añadir aquí una URL real de Google Forms solo cuando esté aprobado.
+  const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf3MonQK1hkRnv7XsqtGNOZFXBH2Px6HfpgR8BYQBTSDqd3mg/viewform'; // Enlace público de Google Forms para responder.
   const taskDefinitions = {
     email: {
       intro: 'Contanos qué querés comunicar. Con esos datos prepararemos una instrucción para redactar tu correo.',
@@ -212,13 +212,18 @@
     $('copy-message').textContent = 'Se preparó el archivo de texto para guardar.';
   });
 
-  // La experiencia de feedback se activa recién al establecer una URL real.
-  if (FEEDBACK_FORM_URL && /^https:\/\//i.test(FEEDBACK_FORM_URL)) {
-    const link = document.createElement('a');
-    link.href = FEEDBACK_FORM_URL; link.target = '_blank'; link.rel='noopener noreferrer';
-    link.className='feedback-link'; link.textContent='Ayudanos a mejorar ↗';
-    document.querySelector('.footer-row').append(link);
-  }
+  // Se muestra la invitación solo si configuramos una URL de Google Forms para responder.
+  try {
+    const feedbackUrl = new URL(FEEDBACK_FORM_URL);
+    const isGoogleForm = feedbackUrl.protocol === 'https:' &&
+      (feedbackUrl.hostname === 'forms.gle' ||
+       (feedbackUrl.hostname === 'docs.google.com' && feedbackUrl.pathname.startsWith('/forms/')));
+    const isEditLink = feedbackUrl.pathname.endsWith('/edit');
+    if (isGoogleForm && !isEditLink) {
+      $('feedback-action').href = feedbackUrl.href;
+      $('opiniones').hidden = false;
+    }
+  } catch (_) { /* El formulario todavía no fue vinculado. */ }
 
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));

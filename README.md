@@ -1,6 +1,6 @@
-# Generador de ideas para IA — piloto 0.3
+# Generador de ideas para IA — piloto 0.4
 
-**Estado:** prototipo funcional para revisión, **NO PUBLICADO**. Nombre y lema provisionales: «Donde tus ideas toman forma».
+**Estado:** aplicación publicada mediante GitHub Pages; versión 0.4 con mejoras en la guía visual y acceso voluntario a opiniones. Nombre y lema provisionales: «Donde tus ideas toman forma».
 
 ## Objetivo
 
@@ -26,21 +26,20 @@ python -m http.server 8000
 
 Luego visitar `http://localhost:8000`.
 
-## Publicación futura (solo con aprobación)
+## Publicación y actualización
 
-1. Crear un **repositorio nuevo**, por ejemplo `juegolimpio/generador-prompts`, sin modificar `juegolimpio/educacionfisica`.
-2. Publicar los archivos de esta carpeta en la raíz del nuevo repositorio.
-3. Activar GitHub Pages en la rama elegida y directorio raíz.
-4. Comprobar HTTPS, instalación Android, copia, descarga y modo offline desde el enlace público.
+1. Conservar una copia de la versión estable anterior.
+2. Subir los archivos modificados (`index.html`, `styles.css`, `app.js`, `sw.js` y este README) al repositorio `juegolimpio/generador-prompts` tras revisión.
+3. Comprobar la guía, la invitación a opinar, la PWA y la generación en celulares después de cada despliegue.
 
-La URL sería aproximadamente `https://juegolimpio.github.io/generador-prompts/`, si se mantiene ese nombre de repositorio.
+Sitio: `https://juegolimpio.github.io/generador-prompts/`. GitHub Pages publica desde `main`.
 
 ## Pendiente antes de compartir ampliamente
 
 - Contrastar las plantillas y criterios de calidad con el texto íntegro de los cuatro prompts originales; no se recuperó aún el archivo RTF original.
 - Validar el contenido generado para cada caso con personas reales y ajustar las preguntas según dificultades.
 - Elegir marca y nombre definitivo.
-- Crear un formulario real de Google Forms y establecer su URL en la constante `FEEDBACK_FORM_URL` del archivo `app.js`. Mientras esté vacía, no aparece un enlace a feedback (para evitar un botón que no funciona). Configurar el formulario para aceptar respuestas sin exigir registro/correo, y explicar claramente el procesamiento voluntario por Google.
+- **Hecho:** se incorporó la URL pública de Google Forms en `FEEDBACK_FORM_URL`, y se comprobó que funciona en una ventana privada (verificación realizada por el responsable del proyecto).
 - Completar las comprobaciones de accesibilidad y navegadores móviles sobre dispositivos reales.
 
 ## Seguridad y privacidad
@@ -50,3 +49,16 @@ No introducir contraseñas, números de documento ni información personal innec
 ## Criterio de versiones
 
 Conservar los pilotos 0.1 y 0.2 como respaldo; 0.3 modifica principalmente la experiencia pública (categorías en lenguaje corriente), mantiene el procesamiento local y agrega las rutas por tarea.
+
+## Cambios de 0.4
+
+- Guía de instalación con pasos visuales independientes para Chrome/Android y Safari/iPhone.
+- Una sección discreta para opiniones, que se activa únicamente con un enlace real de Google Forms.
+- La app sigue sin enviar automáticamente textos del generador a terceros.
+- El archivo `crear_formulario_feedback.gs`, entregado **por separado**, es solo para ejecutar una vez desde Google Apps Script; **no se sube al repositorio público**.
+
+## Enlace público de opiniones conectado en 0.4
+
+https://docs.google.com/forms/d/e/1FAIpQLSf3MonQK1hkRnv7XsqtGNOZFXBH2Px6HfpgR8BYQBTSDqd3mg/viewform
+
+El formulario externo es voluntario: la aplicación no envía contenidos de los prompts a Google Forms.

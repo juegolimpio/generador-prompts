@@ -105,11 +105,46 @@
     <section id="ayuda" class="help-section" aria-labelledby="help-title">
       <div class="help-header"><div><div class="section-kicker">GUÍA RÁPIDA</div><h2 id="help-title">Usarla es muy fácil</h2><p class="section-description">No necesitás instalar nada para empezar.</p></div><div class="help-accent"><svg><use href="#i-phone"/></svg></div></div>
       <div class="help-steps"><div><span>1</span><strong>Elegí lo que querés hacer</strong><p>Un correo, una imagen, una comparación o cualquier idea.</p></div><div><span>2</span><strong>Respondé unas preguntas</strong><p>Podés saltarte las opcionales.</p></div><div><span>3</span><strong>Copiá el resultado</strong><p>Pegalo en ChatGPT, Gemini, Claude u otra IA.</p></div></div>
-      <details class="install-guide"><summary><span><svg><use href="#i-phone"/></svg> ¿Querés tenerla en la pantalla de inicio de tu celular?</span><span class="chevron">⌄</span></summary><div class="install-content"><div><h3>Android (Chrome)</h3><p>Abrí el enlace en Chrome, tocá el menú <strong>⋮</strong> y elegí <strong>«Instalar aplicación»</strong> o <strong>«Agregar a pantalla principal»</strong>. Confirmá.</p></div><div><h3>iPhone (Safari)</h3><p>Abrí el enlace en Safari, tocá <strong>Compartir</strong>, elegí <strong>«Agregar a inicio»</strong> y confirmá.</p></div><p class="install-caveat">Las opciones pueden variar según el navegador. También podés usarla directamente desde el enlace, sin instalarla. Para instalarla debe estar publicada en una dirección segura (HTTPS).</p></div></details>
+      <details class="install-guide" id="instalar"><summary><span><svg><use href="#i-phone"/></svg> ¿Querés tenerla como una aplicación en tu celular?</span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="install-content">
+          <p class="install-intro">Es opcional y no necesitás crear una cuenta. Elegí el tipo de teléfono y seguí estos pasos:</p>
+          <div class="install-platforms">
+            <div class="platform-card">
+              <h3><span class="platform-chip">Android</span> Desde Chrome</h3>
+              <div class="visual-steps" role="list" aria-label="Pasos para Android">
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">🌐</span><span><strong>1. Abrí</strong> la aplicación en Chrome.</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol menu-dots" aria-hidden="true">⋮</span><span><strong>2. Tocá</strong> el menú de tres puntos.</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">＋</span><span><strong>3. Elegí</strong> «Instalar aplicación» o «Agregar a pantalla principal».</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">✓</span><span><strong>4. Confirmá.</strong> El ícono aparecerá en tu inicio.</span></div>
+              </div>
+            </div>
+            <div class="platform-card">
+              <h3><span class="platform-chip ios-chip">iPhone</span> Desde Safari</h3>
+              <div class="visual-steps" role="list" aria-label="Pasos para iPhone">
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">🌐</span><span><strong>1. Abrí</strong> la aplicación en Safari.</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol share-symbol" aria-hidden="true">⇧</span><span><strong>2. Tocá</strong> Compartir (cuadrado con flecha hacia arriba).</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">＋</span><span><strong>3. Elegí</strong> «Agregar a inicio».</span></div>
+                <div class="visual-step" role="listitem"><span class="visual-symbol" aria-hidden="true">✓</span><span><strong>4. Confirmá</strong> con «Agregar».</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="install-caveat">Los nombres y la ubicación de los botones pueden cambiar según el navegador y su versión. Si no encontrás la opción, podés seguir usando la aplicación desde este enlace, sin instalar nada.</p>
+        </div>
+      </details>
       <details class="install-guide"><summary><span><svg><use href="#i-help"/></svg> ¿Y si uso una computadora?</span><span class="chevron">⌄</span></summary><div class="install-content"><p>Entrá al enlace desde tu navegador. Podés guardar la página en favoritos. En navegadores compatibles también aparece una opción para instalarla como aplicación.</p></div></details>
     </section>
+
+    <section class="feedback-section" id="opiniones" aria-labelledby="feedback-title" hidden>
+      <div class="feedback-mark" aria-hidden="true"><svg><use href="#i-help"/></svg></div>
+      <div class="feedback-copy">
+        <h2 id="feedback-title">¿Nos ayudás a mejorar?</h2>
+        <p>Tu experiencia nos ayuda a construir una herramienta más útil y fácil de usar. Son tres preguntas breves; no pedimos nombre ni correo.</p>
+        <small>El formulario es opcional y se abre en Google Forms. Las respuestas que envíes se procesan allí.</small>
+      </div>
+      <a id="feedback-action" class="secondary-button feedback-action" href="#" target="_blank" rel="noopener noreferrer">Dejar mi opinión <svg><use href="#i-arrow"/></svg></a>
+    </section>
   </main>
-  <footer class="footer"><div class="wrap footer-row"><span><span class="footer-spark">✦</span> Donde tus ideas toman forma</span><span>Versión de prueba 0.3 · Sin registro · Sin publicidad</span></div></footer>
+  <footer class="footer"><div class="wrap footer-row"><span><span class="footer-spark">✦</span> Donde tus ideas toman forma</span><span>Versión de prueba 0.4 · Sin registro · Sin publicidad</span></div></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>
