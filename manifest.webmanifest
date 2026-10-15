@@ -1,0 +1,15 @@
+{
+  "name": "Donde tus ideas toman forma — Generador de prompts",
+  "short_name": "Mis ideas",
+  "description": "Convertí tus ideas en instrucciones claras para utilizar con inteligencia artificial.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7faf9",
+  "theme_color": "#12273b",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
